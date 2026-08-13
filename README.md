@@ -30,6 +30,25 @@ I built an end-to-end solution using **SQL Server and Power BI**, covering:
 
 ---
 
+## Business Recommendations
+
+1. **Protect high-performing categories**  
+   Health & Beauty, Watches & Gifts, Bed, Bath & Table, Sports & Leisure, and Computers & Accessories generate roughly 40% of marketplace revenue.
+
+2. **Evaluate both revenue and sales volume**  
+   High-volume categories are not necessarily the highest-value categories. Product strategy should consider both metrics.
+
+3. **Reduce geographic concentration**  
+   With 38.3% of revenue coming from São Paulo and 63.4% from the three largest states, Olist should explore growth opportunities in less-developed regional markets.
+
+4. **Investigate late deliveries**  
+   Analyze late deliveries by seller, region, and period to identify the main drivers behind the **8.11% late-delivery rate**.
+
+5. **Monitor marketplace growth**  
+   Order volume grew strongly between 2017 and 2018, but the stabilization around 6,000–7,000 monthly orders during much of 2018 should be monitored.
+
+---
+
 ## Business Questions Answered
 
 ### How much revenue does Olist generate?
@@ -121,25 +140,6 @@ Of **96,478 delivered orders**:
 - Approximately **91.9% were delivered on time**
 
 Although most orders arrived within the estimated delivery period, nearly **1 in every 12 orders was late**, making delivery reliability an important operational KPI.
-
----
-
-## Business Recommendations
-
-1. **Protect high-performing categories**  
-   Health & Beauty, Watches & Gifts, Bed, Bath & Table, Sports & Leisure, and Computers & Accessories generate roughly 40% of marketplace revenue.
-
-2. **Evaluate both revenue and sales volume**  
-   High-volume categories are not necessarily the highest-value categories. Product strategy should consider both metrics.
-
-3. **Reduce geographic concentration**  
-   With 38.3% of revenue coming from São Paulo and 63.4% from the three largest states, Olist should explore growth opportunities in less-developed regional markets.
-
-4. **Investigate late deliveries**  
-   Analyze late deliveries by seller, region, and period to identify the main drivers behind the **8.11% late-delivery rate**.
-
-5. **Monitor marketplace growth**  
-   Order volume grew strongly between 2017 and 2018, but the stabilization around 6,000–7,000 monthly orders during much of 2018 should be monitored.
 
 ---
 

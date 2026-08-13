@@ -4,157 +4,182 @@
 
 ## Project Overview
 
-**Olist** is a Brazilian e-commerce marketplace that connects customers with sellers across multiple product categories and regions.
+**Olist** is a Brazilian e-commerce marketplace that connects independent sellers with customers across Brazil.
 
-The dataset contains transactional information about **orders, customers, products, sellers, payments, reviews, and delivery operations**.
+Instead of operating as a traditional retailer, Olist enables multiple sellers to offer products through its marketplace ecosystem. This generates transactional and operational data across **customers, orders, products, sellers, payments, reviews, geographic locations, and deliveries**.
 
-### Business Problem
+The goal of this project was to transform this fragmented data into a structured analytics solution capable of answering key questions about **sales performance, products, customers, sellers, geography, and logistics**.
 
-Olist's operational data is distributed across multiple datasets, making it difficult to quickly answer important business questions:
+I built an end-to-end solution using **SQL Server and Power BI**, covering:
 
-- How much revenue is the marketplace generating?
-- How are sales changing over time?
-- Which product categories generate the most revenue?
-- Which regions generate the most sales?
-- Which sellers contribute the most revenue?
-- How efficiently are orders being delivered?
-- How many orders arrive late?
-
-### Solution
-
-I built an **end-to-end SQL Server and Power BI analytics solution** that transforms raw Olist data into a structured **Star Schema**, validates the resulting warehouse, calculates business KPIs, and presents the results through an interactive Power BI dashboard.
-
-The complete analytical workflow is:
-
-**Raw Data → Data Profiling → Data Modeling → ETL → Validation → SQL Analytics → Power BI → Business Insights**
+**Data Profiling → Data Modeling → ETL → Data Validation → SQL Analytics → Power BI → Business Insights**
 
 ---
 
-# Key Business Findings
+## Key Business Findings
 
-The analysis revealed several important patterns in Olist's marketplace performance:
-
-- The analytical warehouse contains **more than 110,000 delivered order-item records** available for sales analysis.
-- Revenue shows clear variation over time, allowing stronger and weaker sales periods to be identified.
-- Revenue is concentrated among several leading **product categories**, while other categories contribute considerably less.
-- Geographic analysis reveals meaningful differences in revenue contribution across **Brazilian customer states**.
-- Seller performance is uneven, with a relatively small group of sellers contributing a significant portion of marketplace revenue.
-- Delivery performance represents an important operational KPI, with thousands of orders arriving after their estimated delivery date.
-- Average delivery time and late-order analysis provide a direct way to evaluate marketplace logistics performance.
-
----
-
-# Business Recommendations
-
-Based on the analysis, Olist should:
-
-- **Prioritize high-revenue product categories** while investigating opportunities to grow categories with strong order volume but lower revenue contribution.
-- **Focus commercial efforts on high-value geographic markets** and investigate weaker states for potential growth opportunities.
-- **Identify and support top-performing sellers**, while benchmarking lower-performing sellers against marketplace leaders.
-- **Monitor late deliveries as a core operational KPI** and investigate sellers, locations, or periods associated with weaker delivery performance.
-- **Align marketplace planning with sales trends** to better anticipate periods of stronger and weaker demand.
-- Evaluate marketplace performance using **revenue, order volume, and logistics metrics together** rather than focusing on sales alone.
+- Olist generated **R$13.22M in product revenue** across **96,478 delivered orders**, with an **average order value of R$137.04**.
+- Order volume expanded significantly: **Jan–Aug 2018 recorded 52,783 orders vs. 21,998 during the same period in 2017**, an increase of approximately **140%**.
+- **November 2017** was the strongest month by order volume with **7,289 orders**.
+- **Health & Beauty** generated the most revenue at **R$1.23M**, while **Bed, Bath & Table** had the highest sales volume with **10,953 order items**.
+- The top five product categories generated approximately **40% of total marketplace revenue**.
+- **São Paulo generated R$5.07M**, representing approximately **38.3% of total revenue**.
+- São Paulo, Rio de Janeiro, and Minas Gerais together generated approximately **63.4% of marketplace revenue**, showing strong geographic concentration.
+- The largest individual seller generated approximately **R$227K**, only around **1.7% of total revenue**, indicating that seller revenue is relatively diversified.
+- Average delivery time was **12 days**, with **7,826 late orders** and an **8.11% late-delivery rate**.
 
 ---
 
-# Power BI Dashboard
+## Business Questions Answered
 
-The final Power BI dashboard provides an interactive view of **sales, product, geographic, seller, and logistics performance** across the Olist marketplace.
+### How much revenue does Olist generate?
+
+Olist generated approximately **R$13.22M in product revenue** from **96,478 delivered orders**, with an **average order value of R$137.04**.
+
+---
+
+### How have sales changed over time?
+
+Order volume increased significantly during the analyzed period.
+
+- **Jan–Aug 2017:** 21,998 orders
+- **Jan–Aug 2018:** 52,783 orders
+- **Growth:** approximately 140%
+
+The strongest month was **November 2017**, with **7,289 orders**.
+
+During much of 2018, monthly order volume stabilized around **6,000–7,000 orders**, following the rapid expansion observed throughout 2017.
+
+---
+
+### Which product categories perform best?
+
+The highest-revenue categories were:
+
+| Product Category | Revenue |
+|---|---:|
+| Health & Beauty | R$1.23M |
+| Watches & Gifts | R$1.17M |
+| Bed, Bath & Table | R$1.02M |
+| Sports & Leisure | R$954.9K |
+| Computers & Accessories | R$888.7K |
+
+Together, these categories generated approximately **40% of total marketplace revenue**.
+
+Revenue and sales volume also tell different stories.
+
+**Bed, Bath & Table** had the highest volume with **10,953 order items**, while **Watches & Gifts** ranked second in revenue despite ranking only seventh in volume.
+
+This suggests that Watches & Gifts generates substantially more revenue per item sold than some higher-volume categories.
+
+---
+
+### Which regions generate the most sales?
+
+Revenue is strongly concentrated in Brazil's Southeast.
+
+| Customer State | Revenue |
+|---|---:|
+| São Paulo | R$5.07M |
+| Rio de Janeiro | R$1.76M |
+| Minas Gerais | R$1.55M |
+| Rio Grande do Sul | R$728.9K |
+| Paraná | R$666.1K |
+
+**São Paulo alone generated approximately 38.3% of total marketplace revenue.**
+
+São Paulo, Rio de Janeiro, and Minas Gerais together accounted for approximately **63.4% of revenue**, demonstrating significant geographic concentration.
+
+---
+
+### Which sellers generate the most revenue?
+
+The five highest-revenue sellers generated approximately:
+
+| Seller | Revenue |
+|---|---:|
+| Seller 1 | R$227.0K |
+| Seller 2 | R$217.9K |
+| Seller 3 | R$196.9K |
+| Seller 4 | R$190.9K |
+| Seller 5 | R$186.6K |
+
+Together, the top five sellers generated approximately **7.7% of total marketplace revenue**.
+
+Even the largest seller represented only around **1.7% of total revenue**, suggesting that Olist's revenue is relatively diversified across its seller base rather than being dependent on a few sellers.
+
+---
+
+### How efficiently are orders delivered?
+
+The average delivery time was **12 days**.
+
+Of **96,478 delivered orders**:
+
+- **7,826 were delivered late**
+- **8.11% missed their estimated delivery date**
+- Approximately **91.9% were delivered on time**
+
+Although most orders arrived within the estimated delivery period, nearly **1 in every 12 orders was late**, making delivery reliability an important operational KPI.
+
+---
+
+## Business Recommendations
+
+1. **Protect high-performing categories**  
+   Health & Beauty, Watches & Gifts, Bed, Bath & Table, Sports & Leisure, and Computers & Accessories generate roughly 40% of marketplace revenue.
+
+2. **Evaluate both revenue and sales volume**  
+   High-volume categories are not necessarily the highest-value categories. Product strategy should consider both metrics.
+
+3. **Reduce geographic concentration**  
+   With 38.3% of revenue coming from São Paulo and 63.4% from the three largest states, Olist should explore growth opportunities in less-developed regional markets.
+
+4. **Investigate late deliveries**  
+   Analyze late deliveries by seller, region, and period to identify the main drivers behind the **8.11% late-delivery rate**.
+
+5. **Monitor marketplace growth**  
+   Order volume grew strongly between 2017 and 2018, but the stabilization around 6,000–7,000 monthly orders during much of 2018 should be monitored.
+
+---
+
+## Power BI Dashboard
+
+The final Power BI dashboard provides an interactive view of **sales, product, geographic, seller, and logistics performance**.
 
 ![Olist Marketplace Power BI Dashboard](dashboard/Dashboards.jpg)
 
-### Executive KPIs
+### Main KPIs
 
-The dashboard tracks:
+- Total Revenue
+- Total Orders
+- Average Order Value
+- Average Delivery Time
+- Late Orders
+- Late Delivery Rate
 
-- **Total Revenue**
-- **Total Orders**
-- **Average Order Value**
-- **Average Delivery Time**
-- **Late Orders**
-- **Late Delivery Rate**
+### Dashboard Analysis
 
-### Sales & Product Performance
+The dashboard allows users to explore:
 
-The dashboard allows users to analyze:
-
-- Revenue trends over time
+- Orders over time
 - Revenue by product category
 - Orders by product category
-- Highest-performing product categories
-- Changes in marketplace performance over time
-
-### Geographic & Seller Performance
-
-The dashboard identifies:
-
 - Revenue by customer state
-- Geographic concentration of marketplace sales
-- Highest-revenue sellers
-- Differences in seller contribution to marketplace revenue
+- Revenue by seller
+- Delivery performance
 
-### Logistics Performance
-
-Operational performance is evaluated through:
-
-- Average delivery time
-- Number of late orders
-- Late-delivery rate
-- Delivery performance across marketplace transactions
-
-### Interactive Filters
-
-Users can dynamically explore the data using:
-
-- **Year**
-- **Product Category**
-- **Customer State**
-- **Seller State**
+Interactive filters allow analysis by **Year, Product Category, Customer State, and Seller State**.
 
 ### Power BI File
 
-The complete interactive Power BI report is available in the repository:
+The complete interactive Power BI report is available here:
 
 [`dashboard/Dashboards.pbix`](dashboard/Dashboards.pbix)
 
 ---
 
-# Business Questions Answered
-
-The project was designed around practical business questions rather than simply visualizing the available data.
-
-### Sales
-
-- What is the total marketplace revenue?
-- How has revenue changed over time?
-- What is the average order value?
-- Which periods generate the strongest sales?
-
-### Products
-
-- Which product categories generate the most revenue?
-- Which categories receive the most orders?
-- How concentrated is marketplace revenue across categories?
-
-### Geography
-
-- Which Brazilian states generate the most revenue?
-- How does marketplace performance differ geographically?
-
-### Sellers
-
-- Which sellers generate the most revenue?
-- How concentrated is revenue among marketplace sellers?
-
-### Logistics
-
-- What is the average delivery time?
-- How many orders arrive late?
-- What percentage of orders are delivered after the estimated delivery date?
-
----
-
-# Architecture
+## Solution Architecture
 
 ```text
 Olist CSV Datasets
@@ -163,13 +188,13 @@ Olist CSV Datasets
         ↓
 SQL Server Source Data
         ↓
-Data Cleaning & Transformation
+Cleaning & Transformation
         ↓
-     ETL Pipeline
+    ETL Pipeline
         ↓
 SQL Server Data Warehouse
         ↓
-      Star Schema
+     Star Schema
         ↓
    Data Validation
         ↓
@@ -177,42 +202,26 @@ SQL Server Data Warehouse
         ↓
       Power BI
         ↓
-   Business Insights
+  Business Insights
 ```
 
 ![Architecture Diagram](docs/Architecture.png)
 
 ---
 
-# Data Profiling
+## Data Warehouse
 
-Before building the warehouse, I performed SQL-based data profiling to understand the structure and quality of the source data.
+A dimensional **Star Schema** was designed to provide an analytics-ready model for SQL and Power BI.
 
-The analysis included:
-
-- Missing values
-- Duplicate records
-- Invalid values
-- Negative and zero values
-- Leading and trailing spaces
-- Inconsistent text formatting
-- Referential integrity
-- Date consistency
-- Category normalization
-- Delivery-time validation
-- Outlier detection
-
-This step allowed potential data-quality problems to be identified **before they entered the analytical warehouse**.
-
-**SQL implementation:**
-
-[`sql/01_data_profiling/Data_Profiling.sql`](sql/01_data_profiling/Data_Profiling.sql)
-
----
-
-# Data Warehouse Design
-
-I designed a dimensional **Star Schema** optimized for analytical queries and Power BI reporting.
+```text
+                 DimDate
+                    │
+                    │
+DimCustomer ─── FactSales ─── DimProduct
+                    │
+                    │
+                 DimSeller
+```
 
 ### Dimension Tables
 
@@ -225,68 +234,36 @@ I designed a dimensional **Star Schema** optimized for analytical queries and Po
 
 - `FactSales`
 
-```text
-                 DimDate
-                    │
-                    │
-DimCustomer ─── FactSales ─── DimProduct
-                    │
-                    │
-                 DimSeller
-```
-
-The `FactSales` table stores order-item-level sales activity and analytical measures including:
+The fact table contains more than **110,000 delivered order-item records** and stores measures including:
 
 - Product Price
 - Freight Value
 - Delivery Days
 - Late Delivery Flag
 
-Surrogate keys connect the fact table with the dimensions and provide an analytics-ready model for Power BI.
-
-**SQL implementation:**
-
-[`sql/02_data_modeling/Data_Modeling.sql`](sql/02_data_modeling/Data_Modeling.sql)
-
 ---
 
-# ETL Pipeline
+## ETL Pipeline
 
 The SQL ETL pipeline transforms the operational Olist data into the dimensional warehouse.
 
-### Extract
-
-Source data is extracted from the Olist operational tables.
-
-### Transform
-
-The transformation layer performs operations including:
+Key transformations include:
 
 - Data cleaning and standardization
 - Product-category translation from Portuguese to English
 - City-name standardization
 - Duplicate handling
-- Date-key generation using `YYYYMMDD`
+- Date-key generation
 - Business-key to surrogate-key mapping
 - Delivery-time calculation
 - Late-delivery flag creation
-- Filtering of delivered orders
-
-### Load
-
-The transformed records are loaded into the dimension and fact tables of the SQL Server warehouse.
-
-The resulting `FactSales` table contains **more than 110,000 delivered order-item records** available for business analysis.
-
-**SQL implementation:**
-
-[`sql/03_etl/Load_Phase.sql`](sql/03_etl/Load_Phase.sql)
+- Filtering to delivered orders
 
 ---
 
-# Data Validation
+## Data Validation
 
-Building the warehouse was only part of the project. I also created a dedicated validation layer to verify that the ETL process produced reliable analytical data.
+The warehouse was validated before being used for reporting.
 
 Validation included:
 
@@ -299,67 +276,50 @@ Validation included:
 - Delivery-time validation
 - Late-delivery validation
 
-This provides an additional quality-control layer between the ETL process and business reporting.
-
-**SQL implementation:**
-
-[`sql/04_validation/Data_Validation.sql`](sql/04_validation/Data_Validation.sql)
+This created an additional quality-control layer between the ETL pipeline and Power BI reporting.
 
 ---
 
-# SQL Analytics
+## SQL Analytics
 
-After validating the warehouse, I created a business analytics layer to calculate the KPIs used for reporting.
+The analytical layer calculates business KPIs across:
 
-### Revenue Analysis
-
+**Sales**
 - Total Revenue
-- Monthly Revenue
 - Average Order Value
+- Orders by Month
 - Revenue by Category
 - Revenue by State
 - Revenue by Seller
 
-### Order Analysis
-
-- Total Orders
-- Orders by Month
+**Customers & Products**
 - Orders by Category
-
-### Customer Analysis
-
 - Customers by State
 - Repeat Customers
 
-### Logistics Analysis
-
+**Logistics**
 - Average Delivery Time
 - Late Orders
 - Late Delivery Rate
 
-**SQL implementation:**
-
-[`sql/05_analytics/Analytics_Layer.sql`](sql/05_analytics/Analytics_Layer.sql)
-
 ---
 
-# Technology Stack
+## Technology Stack
 
-| Area | Technologies |
+| Area | Technology |
 |---|---|
-| Data Analysis | SQL |
 | Database | SQL Server |
+| Data Analysis | SQL / T-SQL |
 | ETL | SQL / T-SQL |
 | Data Warehousing | SQL Server |
-| Data Modeling | Star Schema, Dimensional Modeling |
+| Data Modeling | Star Schema |
 | Data Validation | SQL |
 | Business Intelligence | Power BI |
-| Data Visualization | Power BI |
-| Version Control | Git, GitHub |
+| Version Control | Git & GitHub |
 
 ---
 
-# Repository Structure
+## Repository Structure
 
 ```text
 Olist/
@@ -369,85 +329,29 @@ Olist/
 │   └── Dashboards.pbix
 │
 ├── data/
-│   ├── olist_customers_dataset.csv
-│   ├── olist_geolocation_dataset.csv
-│   ├── olist_order_items_dataset.csv
-│   ├── olist_order_payments_dataset.csv
-│   ├── olist_order_reviews_dataset.csv
-│   ├── olist_orders_dataset.csv
-│   ├── olist_products_dataset.csv
-│   ├── olist_sellers_dataset.csv
-│   └── product_category_name_translation.csv
+│   └── Olist CSV datasets
 │
 ├── docs/
 │   └── Architecture.png
 │
 ├── sql/
 │   ├── 01_data_profiling/
-│   │   └── Data_Profiling.sql
-│   │
 │   ├── 02_data_modeling/
-│   │   └── Data_Modeling.sql
-│   │
 │   ├── 03_etl/
-│   │   └── Load_Phase.sql
-│   │
 │   ├── 04_validation/
-│   │   └── Data_Validation.sql
-│   │
 │   └── 05_analytics/
-│       └── Analytics_Layer.sql
 │
 └── README.md
 ```
 
 ---
 
-# Skills Demonstrated
+## Project Outcome
 
-### Data Analytics & Business Intelligence
+This project transformed fragmented Olist marketplace data into a **validated SQL Server data warehouse and interactive Power BI analytics solution**.
 
-- SQL business analysis
-- Power BI dashboard development
-- KPI development
-- Revenue and sales analysis
-- Trend analysis
-- Product-category analysis
-- Geographic analysis
-- Seller-performance analysis
-- Customer analysis
-- Logistics analysis
-- Data visualization
-- Business storytelling
-
-### SQL & Data Engineering
-
-- SQL Server
-- T-SQL
-- Data profiling
-- Data cleaning
-- ETL development
-- Data transformation
-- Data validation
-- Data-quality testing
-- Dimensional modeling
-- Star Schema design
-- Fact and dimension modeling
-- Surrogate keys
-- Referential-integrity validation
-
----
-
-# Project Outcome
-
-The project transformed fragmented Olist marketplace data into a **validated SQL Server analytical warehouse and interactive Power BI reporting solution**.
-
-The final solution enables marketplace performance to be analyzed across:
+The solution provides a consolidated view of:
 
 **Revenue → Orders → Products → Customers → Geography → Sellers → Logistics**
 
-Rather than simply building a dashboard, the project demonstrates the complete analytical process:
-
-**Understanding Raw Data → Identifying Data-Quality Issues → Designing an Analytical Model → Building ETL Logic → Validating Results → Calculating Business KPIs → Communicating Findings Through Power BI**
-
-This project demonstrates how **SQL and Power BI can transform raw e-commerce transactions into actionable business insights for sales and operational decision-making**.
+More importantly, the project demonstrates the complete analytics workflow from **raw data and ETL development to business analysis, data validation, and decision-focused Power BI reporting**.

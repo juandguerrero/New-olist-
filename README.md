@@ -115,7 +115,7 @@ Users can dynamically explore the data using:
 
 The complete interactive Power BI report is available in the repository:
 
-[`dashboard/Olist_Dashboards.pbix`](dashboard/Olist_Dashboards.pbix)
+[`dashboard/Dashboards.pbix`](dashboard/Dashboards.pbix)
 
 ---
 
@@ -167,7 +167,7 @@ Data Cleaning & Transformation
         ↓
      ETL Pipeline
         ↓
- SQL Server Data Warehouse
+SQL Server Data Warehouse
         ↓
       Star Schema
         ↓
@@ -232,7 +232,7 @@ I designed a dimensional **Star Schema** optimized for analytical queries and Po
 DimCustomer ─── FactSales ─── DimProduct
                     │
                     │
-                DimSeller
+                 DimSeller
 ```
 
 The `FactSales` table stores order-item-level sales activity and analytical measures including:
@@ -365,8 +365,8 @@ After validating the warehouse, I created a business analytics layer to calculat
 Olist/
 │
 ├── dashboard/
-│   ├── Olist_Dashboards.pbix
-│   └── Olist_Dashboards.png
+│   ├── Dashboards.jpg
+│   └── Dashboards.pbix
 │
 ├── data/
 │   ├── olist_customers_dataset.csv

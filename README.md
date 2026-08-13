@@ -181,31 +181,36 @@ The complete interactive Power BI report is available here:
 
 ## Solution Architecture
 
+All data processing and analytics development were performed in **SQL Server**, including **data profiling, data cleaning, transformation, ETL, data warehousing, dimensional modeling, data validation, and SQL analytics**.
+
+**Power BI** was used as the final visualization and reporting layer.
+
 ```text
 Olist CSV Datasets
-        ↓
-   Data Profiling
-        ↓
-SQL Server Source Data
-        ↓
-Cleaning & Transformation
-        ↓
-    ETL Pipeline
-        ↓
-SQL Server Data Warehouse
-        ↓
-     Star Schema
-        ↓
-   Data Validation
-        ↓
-    SQL Analytics
-        ↓
-      Power BI
-        ↓
-  Business Insights
+        │
+        ▼
+SQL Server
+        │
+        ├── Data Profiling
+        │
+        ├── Data Cleaning & Transformation
+        │
+        ├── ETL Pipeline
+        │
+        ├── Data Warehouse
+        │
+        ├── Star Schema
+        │
+        ├── Data Validation
+        │
+        └── SQL Analytics
+        │
+        ▼
+Power BI
+        │
+        ▼
+Business Insights
 ```
-
-![Architecture Diagram](docs/Architecture.png)
 
 ---
 
@@ -330,9 +335,6 @@ Olist/
 │
 ├── data/
 │   └── Olist CSV datasets
-│
-├── docs/
-│   └── Architecture.png
 │
 ├── sql/
 │   ├── 01_data_profiling/

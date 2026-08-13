@@ -44,6 +44,19 @@ The analysis revealed several important patterns in Olist's marketplace performa
 
 ---
 
+# Business Recommendations
+
+Based on the analysis, Olist should:
+
+- **Prioritize high-revenue product categories** while investigating opportunities to grow categories with strong order volume but lower revenue contribution.
+- **Focus commercial efforts on high-value geographic markets** and investigate weaker states for potential growth opportunities.
+- **Identify and support top-performing sellers**, while benchmarking lower-performing sellers against marketplace leaders.
+- **Monitor late deliveries as a core operational KPI** and investigate sellers, locations, or periods associated with weaker delivery performance.
+- **Align marketplace planning with sales trends** to better anticipate periods of stronger and weaker demand.
+- Evaluate marketplace performance using **revenue, order volume, and logistics metrics together** rather than focusing on sales alone.
+
+---
+
 # Power BI Dashboard
 
 The final Power BI dashboard provides an interactive view of **sales, product, geographic, seller, and logistics performance** across the Olist marketplace.
@@ -91,29 +104,18 @@ Operational performance is evaluated through:
 
 ### Interactive Filters
 
-Users can dynamically explore the data using filters such as:
+Users can dynamically explore the data using:
 
 - **Year**
 - **Product Category**
 - **Customer State**
 - **Seller State**
 
-The interactive Power BI report is available here:
+### Power BI File
+
+The complete interactive Power BI report is available in the repository:
 
 [`dashboard/Olist_Dashboards.pbix`](dashboard/Olist_Dashboards.pbix)
-
----
-
-# Business Recommendations
-
-Based on the analysis, Olist should:
-
-- **Prioritize high-revenue product categories** while investigating opportunities to grow categories with strong order volume but lower revenue contribution.
-- **Focus commercial efforts on high-value geographic markets** and investigate weaker states for potential growth opportunities.
-- **Identify and support top-performing sellers**, while benchmarking lower-performing sellers against marketplace leaders.
-- **Monitor late deliveries as a core operational KPI** and investigate sellers, locations, or periods associated with weaker delivery performance.
-- **Align marketplace planning with sales trends** to better anticipate periods of stronger and weaker demand.
-- Evaluate marketplace performance using **revenue, order volume, and logistics metrics together** rather than focusing on sales alone.
 
 ---
 
@@ -204,7 +206,7 @@ This step allowed potential data-quality problems to be identified **before they
 
 **SQL implementation:**
 
-`sql/01_data_profiling/Data_Profiling.sql`
+[`sql/01_data_profiling/Data_Profiling.sql`](sql/01_data_profiling/Data_Profiling.sql)
 
 ---
 
@@ -244,7 +246,7 @@ Surrogate keys connect the fact table with the dimensions and provide an analyti
 
 **SQL implementation:**
 
-`sql/02_data_modeling/Data_Modeling.sql`
+[`sql/02_data_modeling/Data_Modeling.sql`](sql/02_data_modeling/Data_Modeling.sql)
 
 ---
 
@@ -278,7 +280,7 @@ The resulting `FactSales` table contains **more than 110,000 delivered order-ite
 
 **SQL implementation:**
 
-`sql/03_etl/Load_Phase.sql`
+[`sql/03_etl/Load_Phase.sql`](sql/03_etl/Load_Phase.sql)
 
 ---
 
@@ -301,7 +303,7 @@ This provides an additional quality-control layer between the ETL process and bu
 
 **SQL implementation:**
 
-`sql/04_validation/Data_Validation.sql`
+[`sql/04_validation/Data_Validation.sql`](sql/04_validation/Data_Validation.sql)
 
 ---
 
@@ -337,7 +339,7 @@ After validating the warehouse, I created a business analytics layer to calculat
 
 **SQL implementation:**
 
-`sql/05_analytics/Analytics_Layer.sql`
+[`sql/05_analytics/Analytics_Layer.sql`](sql/05_analytics/Analytics_Layer.sql)
 
 ---
 

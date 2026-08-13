@@ -61,7 +61,7 @@ Based on the analysis, Olist should:
 
 The final Power BI dashboard provides an interactive view of **sales, product, geographic, seller, and logistics performance** across the Olist marketplace.
 
-![Olist Marketplace Power BI Dashboard](dashboard/Dashboards .jpg)
+![Olist Marketplace Power BI Dashboard](dashboard/Dashboards.jpg)
 
 ### Executive KPIs
 
